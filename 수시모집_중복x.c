@@ -36,6 +36,7 @@ int main()
 			for (int j = i - 1; j >=0; j--) 
 				free(s_array[i].name);
 			free(s_array);
+			return -1;
 		}
 		strcpy(s_array[i].name, temp); 
 
