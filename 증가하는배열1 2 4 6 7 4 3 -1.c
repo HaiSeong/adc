@@ -10,53 +10,53 @@ int number(int *p, int *q);
 
 int main()
 {
-    int array[100]; // 100개의 정수배열 생성
+    int array[100];
 
-    int N = input(array); // 입력함수
+    int N = input(array); 
     int M;
-    scanf("%d", &M); // 입력
+    scanf("%d", &M); 
 
-    int *q = sel_next(array, N, M); // sel_next 계산
-    printf("%d\n", number(array + M, q)); // 출력
+    int *q = sel_next(array, N, M); 
+    printf("%d\n", number(array + M, q)); 
 }
 
 
 int input(int *p)
 {
-    int i = 0; // 원소의 갯수
-    int temp; // 임시로 받을 공간
+    int i = 0; 
+    int temp; 
 
     while (1)
     {
-        scanf("%d", &temp); // 입력
-        *(p+i) = temp; // 위치에 저장
-        if (*(p+i) == -1) // 종료조건
+        scanf("%d", &temp); 
+        *(p+i) = temp; 
+        if (*(p+i) == -1) 
             break;
-        i++; // 인덱스 증가
+        i++; 
     }
-    return i; // 갯수 리턴
+    return i; 
 }
 
 int *sel_next(int *p, int N, int M) 
 {
-    int *temp = p + M; // 시작점
+    int *temp = p + M; 
 
-    while (*(temp) < *(temp + 1)) // 앞의 원소가 더 작을때 까지
+    while (*(temp) < *(temp + 1)) 
     {
-        temp++; // 증가
+        temp++; 
     }
 
-    return temp; // 리턴
+    return temp; 
     
 }
 
 int number(int *p, int *q)
 {
-    int sum = 0; // 초기화
-    for (int *temp = p; temp <= q; temp++) // 반복문
+    int sum = 0; 
+    for (int *temp = p; temp <= q; temp++) 
     {
-        sum *= 10; // 자리수 올리기
-        sum += *temp; // 1의자리에 더하기
+        sum *= 10; 
+        sum += *temp; 
     }
-    return sum; // 리턴
+    return sum; 
 }
