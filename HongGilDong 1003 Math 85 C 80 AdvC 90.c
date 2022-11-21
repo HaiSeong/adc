@@ -84,6 +84,8 @@ int main()
 	getchar();
 
 	st = (student *)malloc(n * sizeof(student));
+	if (st == NULL)
+		return -1;
 
 	for (i = 0; i < n; i++) 
 	{ 
