@@ -37,6 +37,7 @@ int main()
 			for (int j = i - 1; j >= 0; j--) 
 				free(st_array[j].str);  
 			free(st_array);
+			return -1;
 		}
 		strcpy(st_array[i].str, temp); 
 		st_array[i].cnt1 = 0;
